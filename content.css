@@ -1,0 +1,9 @@
+#local-ai-translate-host {
+  position: absolute;
+  z-index: 2147483647;
+  pointer-events: none;
+}
+
+#local-ai-translate-host * {
+  pointer-events: auto;
+}

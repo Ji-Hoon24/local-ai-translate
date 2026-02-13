@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Local AI Translate</h1>
+
+    <div class="field">
+      <label for="apiBaseUrl">API Base URL</label>
+      <div class="input-row">
+        <input type="text" id="apiBaseUrl" placeholder="http://localhost:11434">
+        <button id="testBtn" class="btn btn-sm">Test</button>
+      </div>
+      <div id="testResult" class="status-msg"></div>
+    </div>
+
+    <div class="field">
+      <label for="model">Model</label>
+      <div class="input-row">
+        <select id="model">
+          <option value="">-- Select a model --</option>
+        </select>
+        <button id="fetchModelsBtn" class="btn btn-sm">Fetch</button>
+      </div>
+      <div id="modelStatus" class="status-msg"></div>
+    </div>
+
+    <div class="field">
+      <label for="targetLang">Target Language</label>
+      <select id="targetLang">
+        <option value="Korean">Korean</option>
+        <option value="English">English</option>
+        <option value="Japanese">Japanese</option>
+        <option value="Chinese (Simplified)">Chinese (Simplified)</option>
+        <option value="Chinese (Traditional)">Chinese (Traditional)</option>
+        <option value="Spanish">Spanish</option>
+        <option value="French">French</option>
+        <option value="German">German</option>
+        <option value="Portuguese">Portuguese</option>
+        <option value="Russian">Russian</option>
+        <option value="Italian">Italian</option>
+        <option value="Vietnamese">Vietnamese</option>
+        <option value="Thai">Thai</option>
+        <option value="Arabic">Arabic</option>
+        <option value="Hindi">Hindi</option>
+      </select>
+    </div>
+
+    <details class="advanced">
+      <summary>Advanced Settings</summary>
+      <div class="field">
+        <label for="systemPrompt">Custom System Prompt</label>
+        <textarea id="systemPrompt" rows="5" placeholder="Leave empty to use default prompt.&#10;Available variable: {targetLang}"></textarea>
+      </div>
+    </details>
+
+    <button id="saveBtn" class="btn btn-primary">Save Settings</button>
+    <div id="saveStatus" class="status-msg"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
