@@ -257,7 +257,7 @@
     copyBtn.classList.remove('copied');
 
     chrome.storage.sync.get(
-      { apiBaseUrl: 'http://121.252.222.39:11434', model: 'translategemma:27b', targetLang: 'Korean', systemPrompt: '' },
+      { apiBaseUrl: 'http://localhost:11434', model: '', targetLang: 'Korean', systemPrompt: '' },
       (settings) => {
         if (!settings.model) {
           resultDiv.textContent = 'No model configured. Open extension settings to set up.';

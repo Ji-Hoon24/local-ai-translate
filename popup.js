@@ -11,7 +11,7 @@ const saveStatus = document.getElementById('saveStatus');
 
 // Load saved settings
 chrome.storage.sync.get(
-  { apiBaseUrl: 'http://121.252.222.39:11434', model: 'translategemma:27b', targetLang: 'Korean', systemPrompt: '' },
+  { apiBaseUrl: 'http://localhost:11434', model: '', targetLang: 'Korean', systemPrompt: '' },
   (items) => {
     apiBaseUrlInput.value = items.apiBaseUrl;
     targetLangSelect.value = items.targetLang;
@@ -121,7 +121,7 @@ fetchModelsBtn.addEventListener('click', async () => {
 // Save settings
 saveBtn.addEventListener('click', () => {
   const settings = {
-    apiBaseUrl: apiBaseUrlInput.value.trim() || 'http://121.252.222.39:11434',
+    apiBaseUrl: apiBaseUrlInput.value.trim() || 'http://localhost:11434',
     model: modelSelect.value,
     targetLang: targetLangSelect.value,
     systemPrompt: systemPromptInput.value.trim(),
